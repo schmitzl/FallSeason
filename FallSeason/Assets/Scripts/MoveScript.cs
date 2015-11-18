@@ -17,8 +17,15 @@ public class MoveScript : MonoBehaviour {
 		// Calculations to redo 
 		if (Input.touchCount == 1) {
 			Touch touch = Input.GetTouch(0);
-			float x = -4.5f + 9 * touch.position.x / Screen.width;
-			float y = -7.5f + 15 * touch.position.y / Screen.height;
+			float x = -2.5f + 5 * touch.position.x / Screen.width;
+			float y = -5.5f + 11 * touch.position.y / Screen.height;
+			transform.position = new Vector3(x, y, 0);
+		}
+
+		// Calculations to redo 
+		if (Input.GetMouseButtonDown(0)) {
+			float x = -2.5f + 5 * Input.mousePosition.x / Screen.width;
+			float y = -5.5f + 11 * Input.mousePosition.y / Screen.height;
 			transform.position = new Vector3(x, y, 0);
 		}
 	}
