@@ -10,6 +10,8 @@ public class WindTest : MonoBehaviour {
 	private bool mousePressed;
 	private Vector2 mouseStartPosition;
 
+	public Vector2 force;
+
 	void Start() {
 		wind = GetComponent<Rigidbody2D> ();
 	}
@@ -31,7 +33,6 @@ public class WindTest : MonoBehaviour {
 		Vector2 umbrellaPosition;
 		Vector2 direction;
 		float distMouseUmbrella;
-		Vector2 force;
 		float airDensity = 1.2f;
 		float surface = 4.0f * Mathf.PI * radius * radius / 2.0f;
 		float dragCoef = 0.45f;
