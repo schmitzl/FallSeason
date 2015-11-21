@@ -1,0 +1,177 @@
+fileFormatVersion: 2
+guid: be5c5c1214bcda545839e5e4d7429813
+timeCreated: 1448138670
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: pinkLevelparts_Cloud
+    21300002: pinkLevelparts_EdgeFlower
+    21300004: pinkLevelparts_Roots
+    21300006: pinkLevelparts_TinyBranch
+    21300008: pinkLevelparts_LongBranch
+    21300010: pinkLevelparts_Tree
+    21300012: pinkLevelparts_Girl
+    21300014: pinkLevelparts_FaeLight
+    21300016: pinkLevelparts_House
+    21300018: pinkLevelparts_FaeLights
+    21300020: pinkLevelparts_PinkGas
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: pinkLevelparts_Cloud
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 1874
+        width: 636
+        height: 250
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pinkLevelparts_EdgeFlower
+      rect:
+        serializedVersion: 2
+        x: 940
+        y: 1773
+        width: 353
+        height: 394
+      alignment: 9
+      pivot: {x: .569324553, y: .0583238937}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pinkLevelparts_Roots
+      rect:
+        serializedVersion: 2
+        x: 972
+        y: 1286
+        width: 346
+        height: 427
+      alignment: 9
+      pivot: {x: .5, y: .888439178}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pinkLevelparts_TinyBranch
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 1305
+        width: 305
+        height: 234
+      alignment: 9
+      pivot: {x: .384105235, y: .197881714}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pinkLevelparts_LongBranch
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 577
+        width: 601
+        height: 187
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pinkLevelparts_Tree
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 791
+        width: 959
+        height: 531
+      alignment: 9
+      pivot: {x: .0293371286, y: .0954680666}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pinkLevelparts_Girl
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 25
+        width: 286
+        height: 339
+      alignment: 9
+      pivot: {x: .395420432, y: .339583188}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pinkLevelparts_FaeLight
+      rect:
+        serializedVersion: 2
+        x: 777
+        y: 566
+        width: 111
+        height: 119
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pinkLevelparts_House
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 90
+        width: 644
+        height: 495
+      alignment: 9
+      pivot: {x: .525332987, y: .30224961}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pinkLevelparts_FaeLights
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 1379
+        width: 432
+        height: 356
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pinkLevelparts_PinkGas
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 803
+        width: 391
+        height: 133
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
