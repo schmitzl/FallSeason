@@ -5,10 +5,10 @@ public class ScrollingManager : MonoBehaviour {
 
 	public GameObject[] background;
 	public GameObject character;
-	public float speed;
 	
 	private float mass;
 	private float levelSpeed;
+	public float speed;
 	private float speedBeforeCollision;
 
 	private int highestBG = 0;
