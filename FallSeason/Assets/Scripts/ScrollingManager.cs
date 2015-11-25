@@ -46,7 +46,8 @@ public class ScrollingManager : MonoBehaviour {
 
 			// If a background is too high, place it underneath the others
 			if (background[highestBG].transform.position.y > 20) {
-				Vector3 down = new Vector3(0, -40, 0);
+				float jumpLength = 20*(background.Length);
+				Vector3 down = new Vector3(0,  -jumpLength, 0);
 				background[highestBG].transform.position += down;
 				highestBG = (highestBG + 1) % background.Length;
 			}
