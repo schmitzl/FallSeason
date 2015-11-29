@@ -33,7 +33,13 @@ public class CreateCoin : MonoBehaviour {
 
 	float HighestBgPos() {
 		float yBg0 = background [0].transform.position.y;
-		float yBg1 = background [1].transform.position.y;
-		return Mathf.Max(yBg0,yBg1);
+		float yBg1;
+		foreach (GameObject bg in background) {
+			yBg1 = bg.transform.position.y;
+			if (yBg1 > yBg0) {
+				yBg0 = yBg1;
+			}
+		}
+		return yBg0;
 	}
 }
