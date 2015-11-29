@@ -13,9 +13,6 @@ public class DragonEnemyScript : MonoBehaviour {
 		
 		startX=transform.position.x;
 		turnX=transform.position.x - 10;
-		Debug.Log (startX);
-		Debug.Log (turnX);
-		
 	}
 	
 	// Update is called once per frame
