@@ -23,6 +23,14 @@ public class ScrollingManager : MonoBehaviour {
 		// Update the speed before collision
 		speedBeforeCollision = - GetComponent<Rigidbody2D>().velocity.y / 30;
 	}
+	
+	void OnCollisionEnter2D (Collision2D collision) {
+		// If the character has reached the down limit
+		// then the background has to start scrolling
+		if (collision.collider.gameObject.tag == "LimitDown") {
+			Scroll();
+		}
+	}
 
 	void OnCollisionStay2D (Collision2D collision) {
 		// If the character has reached the down limit
