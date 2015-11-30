@@ -4,7 +4,7 @@ using System.Collections;
 public class UIManagerScript : MonoBehaviour {
 
 	public void StartGame(){
-		Application.LoadLevel ("MainScene2");
+		Application.LoadLevel ("MainScene");
 	}
 
 	public void StartHighScore(){
