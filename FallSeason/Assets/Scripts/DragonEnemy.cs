@@ -3,36 +3,45 @@ using System.Collections;
 
 public class DragonEnemy : MonoBehaviour {
 
-	private float startX;
-	private float turnX;
-	private float speed = 1;
-	private bool directionIsLeft = true;
-
-	// Use this for initialization
-	void Start () {
-		
-		startX=transform.position.x;
-		turnX=transform.position.x - 10;
+	public Vector3 pointB;
+	public bool spriteFacingLeft;
+	
+	IEnumerator Start()
+	{
+		Vector3 pointA = transform.localPosition;
+		Vector3 pointB = transform.localPosition + new Vector3(-20, 0,0);
+		spriteFacingLeft = true;
+		while(true)
+		{
+			yield return StartCoroutine(MoveObject(transform, pointA, pointB, 10.0f));
+			turn (spriteFacingLeft, true);
+			yield return StartCoroutine(MoveObject(transform, pointB, pointA, 10.0f));
+			turn (spriteFacingLeft, false);
+		}
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		float x = transform.position.x;
-		// Keep on going left till we passed the turn point
-		if (directionIsLeft) {
-			transform.position = new Vector3 (x - Time.deltaTime * speed, transform.position.y, transform.position.z);
-			if (transform.position.x <= turnX) {
-				directionIsLeft = false;
-				transform.Rotate (0, 180, 0);
-			}
-		} 
-		else {
-			transform.position = new Vector3 (x + Time.deltaTime * speed, transform.position.y, transform.position.z);
-			if (transform.position.x >= startX) {
-				directionIsLeft = true;
-				transform.Rotate (0, -180, 0);
-			}
-
+	IEnumerator MoveObject(Transform thisTransform, Vector3 startPos, Vector3 endPos, float time)
+	{
+		float i= 0.0f;
+		float rate= 1.0f/time;
+		while(i < 1.0f)
+		{
+			i += Time.deltaTime * rate;
+			thisTransform.localPosition = Vector3.Lerp(startPos, endPos, i);
+			yield return null;
 		}
+	}
+
+	private void turn(bool facingLeft, bool forward){
+
+		int forwardFactor = 1;
+		if(!forward)
+			forwardFactor = -1;
+
+		if(spriteFacingLeft)
+			transform.Rotate(new Vector3(0,forwardFactor*180f,0));
+		else
+			transform.Rotate(new Vector3(0,forwardFactor* (-180f),0));
+
 	}
 }
