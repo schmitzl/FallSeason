@@ -4,24 +4,27 @@ using UnityEngine.UI;
 
 public class PickCoins : MonoBehaviour {
 
-	public Text countText;
+	private int coinCounter;
 
-	private int count;
-	
+	public int coins {
+		get { return coinCounter; }
+		set { coinCounter = value; }
+	}
+
 	void Start() {
-		count = 0;
-		SetCountText ();
+		coinCounter = 0;
 	}
 
 	void OnTriggerEnter2D (Collider2D other) {
-		if (other.gameObject.CompareTag("Coin")) {
+		if (other.gameObject.CompareTag("GoldCoin")) {
 			Destroy(other.gameObject);
-			count++;
-			SetCountText();
+			coinCounter += 5;
+		} else if (other.gameObject.CompareTag("SilverCoin")) {
+			Destroy(other.gameObject);
+			coinCounter += 2;
+		} else if (other.gameObject.CompareTag("BronzeCoin")) {
+			Destroy(other.gameObject);
+			coinCounter += 1;
 		}
-	}
-	
-	void SetCountText() {
-		countText.text = "Score: " + count.ToString ();
 	}
 }
