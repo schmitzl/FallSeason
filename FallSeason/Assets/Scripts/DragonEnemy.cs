@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class DragonEnemyScript : MonoBehaviour {
+public class DragonEnemy : MonoBehaviour {
 
 	private float startX;
 	private float turnX;
@@ -34,8 +34,5 @@ public class DragonEnemyScript : MonoBehaviour {
 			}
 
 		}
-
-			
-		
 	}
 }
