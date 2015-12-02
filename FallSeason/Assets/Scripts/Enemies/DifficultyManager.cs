@@ -12,7 +12,16 @@ public class DifficultyManager : MonoBehaviour {
 		Vector3 center = spriteRenderer.bounds.center;
 		Vector3 min = spriteRenderer.bounds.min;
 
+		spawnDragon(level.transform, min, center, max);
+
+
+
+
+	}
+
+	private void spawnDragon(Transform levelTransform, Vector3 min, Vector3 center, Vector3 max){
 		GameObject dragon = (GameObject) Instantiate(dragonEnemy, new Vector3(max.x, Random.Range(min.y, max.y), center.z), Quaternion.identity);
-		dragon.transform.SetParent(level.transform);
+		dragon.transform.SetParent(levelTransform);
+
 	}
 }
