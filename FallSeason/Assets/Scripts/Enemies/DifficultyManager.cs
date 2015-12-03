@@ -23,18 +23,26 @@ public class DifficultyManager : MonoBehaviour {
 				pathPoints.Add(child);
 			}
 		}
+
+		// Check if this level has place for more enemies
+		LevelSegment levelSegment = level.GetComponent<LevelSegment> ();
+
+		if (levelSegment.EnemyCount < levelSegment.MaxEnemyCount) {
 		
-		int choice = Random.Range(0,3);
-		choice = 2;
-		switch(choice){
-		case 0:
-			break; // spawn nothing
-		case 1:
-			spawnDragon(level.transform, min, center, max);
-			break;
-		case 2:
-			spawnTigerNinja(level.transform, min, center, max, pathPoints);
-			break;
+			int choice = Random.Range (0, 3);
+			choice = 2;
+			switch (choice) {
+			case 0:
+				break; // spawn nothing
+			case 1:
+				spawnDragon (level.transform, min, center, max);
+				levelSegment.EnemyCount += 1;
+				break;
+			case 2:
+				spawnTigerNinja (level.transform, min, center, max, pathPoints);
+				levelSegment.EnemyCount += 1;
+				break;
+			}
 		}
 	}
 
