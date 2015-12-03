@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
+using UnityEngine.Assertions;
 using System.Collections;
+using System.Collections.Generic;
 
 public class DifficultyManager : MonoBehaviour {
 
@@ -13,7 +15,17 @@ public class DifficultyManager : MonoBehaviour {
 		Vector3 center = spriteRenderer.bounds.center;
 		Vector3 min = spriteRenderer.bounds.min;
 
+		// try to extract path points to place enemies
+		List<Transform> pathPoints = new List<Transform> ();
+		Transform pathTransform = level.transform.FindChild ("Path");
+		if (pathTransform != null) {
+			foreach(Transform child in pathTransform){
+				pathPoints.Add(child);
+			}
+		}
+		
 		int choice = Random.Range(0,3);
+		choice = 2;
 		switch(choice){
 		case 0:
 			break; // spawn nothing
@@ -21,7 +33,7 @@ public class DifficultyManager : MonoBehaviour {
 			spawnDragon(level.transform, min, center, max);
 			break;
 		case 2:
-			spawnTigerNinja(level.transform, min, center, max);
+			spawnTigerNinja(level.transform, min, center, max, pathPoints);
 			break;
 		}
 	}
@@ -32,9 +44,22 @@ public class DifficultyManager : MonoBehaviour {
 
 	}
 
-	private void spawnTigerNinja(Transform levelTransform, Vector3 min, Vector3 center, Vector3 max){
-		GameObject ninja = (GameObject) Instantiate(tigerNinja, new Vector3(Random.Range(min.x,max.x), Random.Range(min.y, max.y), center.z), Quaternion.identity);
+	private void spawnTigerNinja(Transform levelTransform, Vector3 min, Vector3 center, Vector3 max, List<Transform> pathPoints){
+		Vector3 position;
+
+		// Create initial position
+		Assert.IsTrue (pathPoints.Count >= 2); // Two points are needed for the ninja
+		int index = Random.Range (0, pathPoints.Count);
+		Transform posTransform = pathPoints [index];
+		pathPoints.Remove(posTransform);
+		position = posTransform.position;
+
+		GameObject ninja = (GameObject) Instantiate(tigerNinja, position, Quaternion.identity);
 		ninja.transform.SetParent(levelTransform);
-		
+
+		// Create second position to move back and forth from
+		Transform pathPointTransform = pathPoints[Random.Range(0, pathPoints.Count)];
+		ninja.GetComponent<TigerNinjaEnemy>().pointB = pathPointTransform.localPosition;
+
 	}
 }
