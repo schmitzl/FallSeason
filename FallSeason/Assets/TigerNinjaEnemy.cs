@@ -4,6 +4,7 @@ using System.Collections;
 public class TigerNinjaEnemy : MonoBehaviour {
 
 	public Vector3 pointB;
+	public int dirChange = 5;
 
 	private int teleportHash = Animator.StringToHash("Teleport");
 	private int cloudHash = Animator.StringToHash("Cloud");
@@ -15,7 +16,8 @@ public class TigerNinjaEnemy : MonoBehaviour {
 	IEnumerator Start () {
 		anim = GetComponent<Animator>();
 		Vector3 pointA = transform.localPosition;
-		Vector3 pointB = transform.localPosition + new Vector3(3,-3,0);
+		if(pointB == Vector3.zero)
+			pointB = transform.localPosition + new Vector3(Random.Range(-dirChange,dirChange), Random.Range(-dirChange, dirChange), 0);
 		while(true)
 		{
 			yield return  StartCoroutine(Idle(Random.Range(2,3)));
