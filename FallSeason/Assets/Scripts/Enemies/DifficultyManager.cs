@@ -30,7 +30,6 @@ public class DifficultyManager : MonoBehaviour {
 		if (levelSegment.EnemyCount < levelSegment.MaxEnemyCount) {
 		
 			int choice = Random.Range (0, 3);
-			choice = 2;
 			switch (choice) {
 			case 0:
 				break; // spawn nothing
