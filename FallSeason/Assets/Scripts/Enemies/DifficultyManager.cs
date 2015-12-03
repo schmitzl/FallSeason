@@ -4,6 +4,7 @@ using System.Collections;
 public class DifficultyManager : MonoBehaviour {
 
 	public GameObject dragonEnemy;
+	public GameObject tigerNinja;
 
 	public void spawn(GameObject level){
 
