@@ -2,22 +2,21 @@
 using System.Collections;
 
 public class UmbrellaFolding : MonoBehaviour {
-
+	
 	public float gravityMult;
 
 	private bool umbrellaFolded = false;
 	private float doubleClickStart = 0.0f;
 	
-	void OnMouseUp()
+	void Update()
 	{
-		if ((Time.time - doubleClickStart) < 0.3f)
-		{
-			this.OnDoubleClick();
-			doubleClickStart = -1.0f;
-		}
-		else
-		{
-			doubleClickStart = Time.time;
+		if (Input.GetMouseButtonDown (0)) {
+			if ((Time.time - doubleClickStart) < 0.3f) {
+				this.OnDoubleClick ();
+				doubleClickStart = -1.0f;
+			} else {
+				doubleClickStart = Time.time;
+			}
 		}
 	}
 	
