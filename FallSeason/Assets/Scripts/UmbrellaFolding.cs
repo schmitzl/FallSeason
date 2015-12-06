@@ -29,4 +29,9 @@ public class UmbrellaFolding : MonoBehaviour {
 			this.transform.GetComponent<Rigidbody2D> ().gravityScale /= gravityMult;
 		}
 	}
+
+	public bool folded {
+		get { return umbrellaFolded; }
+		set { umbrellaFolded = value; }
+	}
 }
