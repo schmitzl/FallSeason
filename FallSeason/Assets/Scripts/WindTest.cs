@@ -5,6 +5,7 @@ public class WindTest : MonoBehaviour {
 	
 	public float radius;
 	public float scaleWind;
+	public ParticleSystem windParticles;
 
 	private Rigidbody2D wind;
 	private bool mousePressed;
@@ -58,6 +59,11 @@ public class WindTest : MonoBehaviour {
 					force = new Vector2 (direction.x, direction.y) * windForce;
 				}*/
 				direction = mouseEndPosition - mouseStartPosition;
+				//Vector3 particlesDirection = new Vector3(direction.x, direction.y, 0);
+				//Instantiate(windParticles, mouseStartPosition, Quaternion.LookRotation(Vector3.forward, particlesDirection));
+				
+				//windParticles.transform.rotation = Quaternion.LookRotation(Vector3.forward, particlesDirection);
+				//windParticles.Play(false);
 				force = new Vector2 (direction.x, direction.y) * windForce;
 				wind.AddForce (force);
 			}
