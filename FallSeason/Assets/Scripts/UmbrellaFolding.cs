@@ -14,17 +14,15 @@ public class UmbrellaFolding : MonoBehaviour {
 		animator = GetComponent<Animator>();
 	}
 	
-	void OnMouseUp()
+	void DetectDoubleClick()
 	{
-		if ((Time.time - doubleClickStart) < 0.3f)
-		{
-			this.OnDoubleClick();
-			doubleClickStart = -1.0f;
-		}
-		else
-		{
-			Debug.Log ("rate");
-			doubleClickStart = Time.time;
+		if (Input.GetMouseButtonDown (0)) {
+			if ((Time.time - doubleClickStart) < 0.3f) {
+				this.OnDoubleClick ();
+				doubleClickStart = -1.0f;
+			} else {
+				doubleClickStart = Time.time;
+			}
 		}
 	}
 	
@@ -43,6 +41,7 @@ public class UmbrellaFolding : MonoBehaviour {
 	}
 
 	void Update() {
+		DetectDoubleClick ();
 		if (animator.GetBool ("isFalling")) {
 			animator.SetBool ("shouldFall", false);
 		}
@@ -50,5 +49,10 @@ public class UmbrellaFolding : MonoBehaviour {
 			animator.SetBool ("isFalling", true);
 		}
 
+	}
+
+	public bool folded {
+		get { return umbrellaFolded; }
+		set { umbrellaFolded = value; }
 	}
 }

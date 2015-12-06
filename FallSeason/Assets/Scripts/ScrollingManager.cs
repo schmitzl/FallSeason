@@ -14,6 +14,11 @@ public class ScrollingManager : MonoBehaviour {
 	private float levelSpeed;
 	private float speedBeforeCollision;
 
+	private float speedUnfolded;
+	private float speedFolded;
+	private bool foldStateRegistered = false;
+	private float gravityMult;
+
 	public float speed {
 		get { return speedBG; }
 		set { speedBG = value; }
@@ -27,6 +32,10 @@ public class ScrollingManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		mass = GetComponent<Rigidbody2D>().mass;
+		gravityMult = GetComponent<UmbrellaFolding>().gravityMult;
+		speedUnfolded = 0.05f;
+		speedFolded = speedUnfolded * gravityMult / 4;
+		levelSpeed = speedUnfolded;
 		levelSpeed = 0.05f;
 		speedBG = levelSpeed;
 		distanceCounter = 0;
@@ -59,7 +68,22 @@ public class ScrollingManager : MonoBehaviour {
 		if (speedBeforeCollision > 0.01f) {
 			speedBG = speedBeforeCollision;
 		}
-		
+
+		float gravityScale = this.transform.GetComponent<Rigidbody2D> ().gravityScale;
+		bool nowFolded = GetComponent<UmbrellaFolding> ().folded;
+		// If the umbrella has changed state, then change level speed
+		if (nowFolded != foldStateRegistered) {
+			// if the umbrella is now folded
+			if (nowFolded) {
+				levelSpeed = speedFolded;
+				speedBG += (gravityMult - 1.0f) * gravityScale * (-Physics.gravity.y) * Time.deltaTime / 30;
+			} else {
+				levelSpeed = speedUnfolded;
+				speedBG -= (gravityMult - 1.0f) * gravityScale * (-Physics.gravity.y) * Time.deltaTime / 30;
+			}
+			foldStateRegistered = !foldStateRegistered;
+		}
+
 		// We add the force input to the speed
 		if (Input.GetMouseButtonUp(0)) {
 			float forceY = GetComponent<WindTest>().force.y;
