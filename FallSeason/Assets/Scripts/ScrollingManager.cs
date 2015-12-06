@@ -4,7 +4,7 @@ using System.Collections;
 public class ScrollingManager : MonoBehaviour {
 	
 	public GameObject[] background;
-	private int highestBG = 0;
+	public int highestBG = 0;
 	private int counterBG = 0;
 	
 	private float speedBG;

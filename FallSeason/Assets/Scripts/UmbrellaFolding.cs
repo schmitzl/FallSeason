@@ -23,16 +23,19 @@ public class UmbrellaFolding : MonoBehaviour {
 		}
 		else
 		{
+			Debug.Log ("rate");
 			doubleClickStart = Time.time;
 		}
 	}
 	
 	void OnDoubleClick () {
 		if (!umbrellaFolded) {
+			Debug.Log ("folded");
 			umbrellaFolded = true;
 			this.transform.GetComponent<Rigidbody2D> ().gravityScale *= gravityMult;
 			animator.SetBool ("shouldFall", true);
 		} else {
+			Debug.Log ("unfolded");
 			umbrellaFolded = false;
 			this.transform.GetComponent<Rigidbody2D> ().gravityScale /= gravityMult;
 			animator.SetBool ("isFalling", false);
