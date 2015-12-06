@@ -7,6 +7,12 @@ public class UmbrellaFolding : MonoBehaviour {
 
 	private bool umbrellaFolded = false;
 	private float doubleClickStart = 0.0f;
+
+	Animator animator;
+
+	void Start() {
+		animator = GetComponent<Animator>();
+	}
 	
 	void OnMouseUp()
 	{
@@ -17,17 +23,32 @@ public class UmbrellaFolding : MonoBehaviour {
 		}
 		else
 		{
+			Debug.Log ("rate");
 			doubleClickStart = Time.time;
 		}
 	}
 	
 	void OnDoubleClick () {
 		if (!umbrellaFolded) {
+			Debug.Log ("folded");
 			umbrellaFolded = true;
 			this.transform.GetComponent<Rigidbody2D> ().gravityScale *= gravityMult;
+			animator.SetBool ("shouldFall", true);
 		} else {
+			Debug.Log ("unfolded");
 			umbrellaFolded = false;
 			this.transform.GetComponent<Rigidbody2D> ().gravityScale /= gravityMult;
+			animator.SetBool ("isFalling", false);
 		}
+	}
+
+	void Update() {
+		if (animator.GetBool ("isFalling")) {
+			animator.SetBool ("shouldFall", false);
+		}
+		if (umbrellaFolded) {
+			animator.SetBool ("isFalling", true);
+		}
+
 	}
 }
