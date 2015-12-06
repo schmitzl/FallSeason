@@ -58,8 +58,8 @@ public class WindTest : MonoBehaviour {
 					force = new Vector2 (direction.x, direction.y) * windForce;
 				}*/
 				direction = mouseEndPosition - mouseStartPosition;
-				Vector3 particlesDirection = new Vector3(direction.x, direction.y, 0);
-				Instantiate(windParticles, mouseStartPosition, Quaternion.LookRotation(Vector3.forward, particlesDirection));
+				//Vector3 particlesDirection = new Vector3(direction.x, direction.y, 0);
+				//Instantiate(windParticles, mouseStartPosition, Quaternion.LookRotation(Vector3.forward, particlesDirection));
 				
 				//windParticles.transform.rotation = Quaternion.LookRotation(Vector3.forward, particlesDirection);
 				//windParticles.Play(false);
