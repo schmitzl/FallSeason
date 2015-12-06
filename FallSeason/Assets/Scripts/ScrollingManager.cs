@@ -9,15 +9,10 @@ public class ScrollingManager : MonoBehaviour {
 	
 	private float speedBG;
 	private int distanceCounter;
-	
+
 	private float mass;
 	private float levelSpeed;
 	private float speedBeforeCollision;
-	
-	private float speedUnfolded;
-	private float speedFolded;
-	private bool foldStateRegistered = false;
-	private float gravityMult;
 
 	public float speed {
 		get { return speedBG; }
@@ -28,14 +23,11 @@ public class ScrollingManager : MonoBehaviour {
 		get { return distanceCounter; }
 		set { distanceCounter = value; }
 	}
-	
+
 	// Use this for initialization
 	void Start () {
 		mass = GetComponent<Rigidbody2D>().mass;
-		gravityMult = GetComponent<UmbrellaFolding>().gravityMult;
-		speedUnfolded = 0.05f;
-		speedFolded = speedUnfolded * gravityMult / 4;
-		levelSpeed = speedUnfolded;
+		levelSpeed = 0.05f;
 		speedBG = levelSpeed;
 		distanceCounter = 0;
 	}
@@ -53,7 +45,7 @@ public class ScrollingManager : MonoBehaviour {
 			Scroll();
 		}
 	}
-	
+
 	void OnCollisionStay2D (Collision2D collision) {
 		// If the character has reached the down limit
 		// then the background has to start scrolling
@@ -61,26 +53,11 @@ public class ScrollingManager : MonoBehaviour {
 			Scroll();
 		}
 	}
-	
+
 	void Scroll() {
 		// We use the speed before collision with down limit as the new speed
 		if (speedBeforeCollision > 0.01f) {
 			speedBG = speedBeforeCollision;
-		}
-
-		float gravityScale = this.transform.GetComponent<Rigidbody2D> ().gravityScale;
-		bool nowFolded = GetComponent<UmbrellaFolding> ().folded;
-		// If the umbrella has changed state, then change level speed
-		if (nowFolded != foldStateRegistered) {
-			// if the umbrella is now folded
-			if (nowFolded) {
-				levelSpeed = speedFolded;
-				speedBG += (gravityMult - 1.0f) * gravityScale * (-Physics.gravity.y) * Time.deltaTime / 30;
-			} else {
-				levelSpeed = speedUnfolded;
-				speedBG -= (gravityMult - 1.0f) * gravityScale * (-Physics.gravity.y) * Time.deltaTime / 30;
-			}
-			foldStateRegistered = !foldStateRegistered;
 		}
 		
 		// We add the force input to the speed
@@ -102,10 +79,10 @@ public class ScrollingManager : MonoBehaviour {
 			highestBG = (highestBG + 1) % background.Length;
 			counterBG++;
 		}
-		
+
 		// We update the distance counter
 		distanceCounter = 17 * counterBG + (int)(background[highestBG].transform.position.y);
-		
+
 		// If the speed is different from the average speed
 		// increase or decrease it with a small step
 		if (speedBG < levelSpeed - 0.002f) {
@@ -113,6 +90,6 @@ public class ScrollingManager : MonoBehaviour {
 		} else if (speedBG > levelSpeed + 0.002f) {
 			speedBG -= 0.002f;
 		}
+
 	}
-	
 }
