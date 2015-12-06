@@ -17,16 +17,13 @@ public class PickCoins : MonoBehaviour {
 
 	void OnTriggerEnter2D (Collider2D other) {
 		if (other.gameObject.CompareTag("GoldCoin")) {
-			//Destroy(other.gameObject);
-			other.gameObject.SetActive(false);
+			Destroy(other.gameObject);
 			coinCounter += 5;
 		} else if (other.gameObject.CompareTag("SilverCoin")) {
-			//Destroy(other.gameObject);
-			other.gameObject.SetActive(false);
+			Destroy(other.gameObject);
 			coinCounter += 2;
 		} else if (other.gameObject.CompareTag("BronzeCoin")) {
-			//Destroy(other.gameObject);
-			other.gameObject.SetActive(false);
+			Destroy(other.gameObject);
 			coinCounter += 1;
 		}
 	}
