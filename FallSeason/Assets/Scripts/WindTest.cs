@@ -5,6 +5,10 @@ public class WindTest : MonoBehaviour {
 	
 	public float radius;
 	public float scaleWind;
+	
+	public GameObject big;
+	public GameObject medium;
+	public GameObject small;
 
 	private Rigidbody2D wind;
 	private bool mousePressed;
@@ -60,6 +64,7 @@ public class WindTest : MonoBehaviour {
 				direction = mouseEndPosition - mouseStartPosition;
 				force = new Vector2 (direction.x, direction.y) * windForce;
 				wind.AddForce (force);
+				spawnWindParticles();
 			}
 		}
 	}
@@ -78,5 +83,26 @@ public class WindTest : MonoBehaviour {
 			animator.SetBool ("windIsBlowingToTheRight", false);
 		}
 
+	}
+
+	void spawnWindParticles () {
+		float norm = Vector2.Distance(mouseStartPosition, mouseEndPosition);
+//		Debug.Log(norm);
+		GameObject windInstance;
+		Vector3 dir = mouseEndPosition - mouseStartPosition;
+		float alpha = Mathf.Atan(dir.y / dir.x) * Mathf.Rad2Deg;
+		if (mouseStartPosition.x > mouseEndPosition.x) {
+			alpha += 180;
+		}
+		Debug.Log (alpha);
+		if (norm > 4.5f) {
+			windInstance = Instantiate(big, mouseStartPosition, Quaternion.identity) as GameObject;
+		} else if (norm <= 4.5f && norm > 2.0f) {
+			windInstance = Instantiate(medium, mouseStartPosition, Quaternion.identity) as GameObject;
+		} else {
+			windInstance = Instantiate(small, mouseStartPosition, Quaternion.identity) as GameObject;
+		}
+		windInstance.transform.Rotate(0, 0, alpha);
+		Destroy(windInstance, 5);
 	}
 }
