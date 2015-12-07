@@ -1,0 +1,155 @@
+fileFormatVersion: 2
+guid: 122e48d409c454a18920343d246ef1da
+timeCreated: 1448442794
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: girlIdleLeft_0
+    21300002: girlIdleLeft_1
+    21300004: girlIdleLeft_2
+    21300006: girlIdleLeft_3
+    21300008: girlIdleLeft_4
+    21300010: girlIdleLeft_5
+    21300012: girlIdleLeft_6
+    21300014: girlIdleLeft_7
+    21300016: girlIdleLeft_8
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: girlIdleLeft_0
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 25
+        width: 592
+        height: 1146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: girlIdleLeft_1
+      rect:
+        serializedVersion: 2
+        x: 915
+        y: 14
+        width: 592
+        height: 1134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: girlIdleLeft_2
+      rect:
+        serializedVersion: 2
+        x: 1759
+        y: 18
+        width: 592
+        height: 1135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: girlIdleLeft_3
+      rect:
+        serializedVersion: 2
+        x: 2546
+        y: 36
+        width: 593
+        height: 1124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: girlIdleLeft_4
+      rect:
+        serializedVersion: 2
+        x: 3454
+        y: 57
+        width: 599
+        height: 1116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: girlIdleLeft_5
+      rect:
+        serializedVersion: 2
+        x: 4070
+        y: 97
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: girlIdleLeft_6
+      rect:
+        serializedVersion: 2
+        x: 3881
+        y: 52
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: girlIdleLeft_7
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 0
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: girlIdleLeft_8
+      rect:
+        serializedVersion: 2
+        x: 1410
+        y: 1
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
