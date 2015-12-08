@@ -7,11 +7,13 @@ public class UmbrellaFolding : MonoBehaviour {
 
 	private bool umbrellaFolded = false;
 	private float doubleClickStart = 0.0f;
+	private Rigidbody2D rigidBody;
 
 	Animator animator;
 
 	void Start() {
 		animator = GetComponent<Animator>();
+		rigidBody = GetComponent<Rigidbody2D> ();
 	}
 	
 	void DetectDoubleClick()
@@ -28,15 +30,16 @@ public class UmbrellaFolding : MonoBehaviour {
 	
 	void OnDoubleClick () {
 		if (!umbrellaFolded) {
-			Debug.Log ("folded");
 			umbrellaFolded = true;
 			this.transform.GetComponent<Rigidbody2D> ().gravityScale *= gravityMult;
 			animator.SetBool ("isFalling", true);
+			gameObject.layer = LayerMask.NameToLayer("Folded");
 		} else {
-			Debug.Log ("unfolded");
 			umbrellaFolded = false;
 			this.transform.GetComponent<Rigidbody2D> ().gravityScale /= gravityMult;
 			animator.SetBool ("isFalling", false);
+			gameObject.layer = LayerMask.NameToLayer("Default");
+			rigidBody.AddForce(new Vector2(0, 0.3f* -rigidBody.velocity.y)); // add a stop forcing
 		}
 	}
 
