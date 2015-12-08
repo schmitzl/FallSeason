@@ -85,6 +85,12 @@ public class WindTest : MonoBehaviour {
 
 	}
 
+	Vector3 scaleDir (Vector3 dir) {
+		dir.x = dir.x * 0.1f;
+		dir.y = dir.y * 0.3f;
+		return dir;
+	}
+
 	void spawnWindParticles () {
 		// We calculate the rotation of the wind effect around z
 		Vector3 dir = mouseEndPosition - mouseStartPosition;
@@ -98,12 +104,16 @@ public class WindTest : MonoBehaviour {
 		if (norm > 0.5f) {
 
 			// Depending of the strength of the wind, we instantiate a big, medium or small one
+			Vector3 pos;
 			if (norm > 5.0f) {
-				windInstance = Instantiate(big, mouseStartPosition, Quaternion.identity) as GameObject;
+				pos = this.transform.position - scaleDir(dir);
+				windInstance = Instantiate(big, pos, Quaternion.identity) as GameObject;
 			} else if (norm <= 5.0f && norm > 2.5f) {
-				windInstance = Instantiate(medium, mouseStartPosition, Quaternion.identity) as GameObject;
+				pos = this.transform.position - scaleDir(dir);
+				windInstance = Instantiate(medium, pos, Quaternion.identity) as GameObject;
 			} else {
-				windInstance = Instantiate(small, mouseStartPosition, Quaternion.identity) as GameObject;
+				pos = this.transform.position - scaleDir(dir);
+				windInstance = Instantiate(small, pos, Quaternion.identity) as GameObject;
 			}
 
 			// We rotate it depending on the direction
