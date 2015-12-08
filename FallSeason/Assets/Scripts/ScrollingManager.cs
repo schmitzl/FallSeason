@@ -100,6 +100,11 @@ public class ScrollingManager : MonoBehaviour {
 			float jumpLength = 17*(background.Length);
 			Vector3 down = new Vector3(0,  -jumpLength, 0);
 			background[highestBG].transform.position += down;
+
+			// Reset all taken collectables
+			respawnCollectables(background[highestBG]);
+
+
 			highestBG = (highestBG + 1) % background.Length;
 			counterBG++;
 		}
@@ -115,5 +120,14 @@ public class ScrollingManager : MonoBehaviour {
 			speedBG -= 0.002f;
 		}
 
+	}
+
+	private void respawnCollectables(GameObject level){
+		Transform collectablesTransform = level.transform.FindChild ("Collectables");
+		if (collectablesTransform != null) {
+			foreach(Transform child in collectablesTransform){
+				child.gameObject.SetActive(true);
+			}
+		}
 	}
 }
