@@ -31,7 +31,7 @@ public class UmbrellaFolding : MonoBehaviour {
 			Debug.Log ("folded");
 			umbrellaFolded = true;
 			this.transform.GetComponent<Rigidbody2D> ().gravityScale *= gravityMult;
-			animator.SetBool ("shouldFall", true);
+			animator.SetBool ("isFalling", true);
 		} else {
 			Debug.Log ("unfolded");
 			umbrellaFolded = false;
@@ -42,13 +42,6 @@ public class UmbrellaFolding : MonoBehaviour {
 
 	void Update() {
 		DetectDoubleClick ();
-		if (animator.GetBool ("isFalling")) {
-			animator.SetBool ("shouldFall", false);
-		}
-		if (umbrellaFolded) {
-			animator.SetBool ("isFalling", true);
-		}
-
 	}
 
 	public bool folded {
