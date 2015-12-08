@@ -21,9 +21,7 @@ public class WindTest : MonoBehaviour {
 	}
 
 	void Update(){
-		Vector2 direction;
-		Vector2 umbrellaPosition;
-		float distMouseUmbrella;
+		Vector2 direction;	
 		float airDensity = 1.2f;
 		float surface = 4.0f * Mathf.PI * radius * radius / 2.0f;
 		float dragCoef = 0.45f;
@@ -36,7 +34,7 @@ public class WindTest : MonoBehaviour {
 		if (Input.GetMouseButtonUp (0)) {
 			if (mousePressed) {
 				mouseEndPosition = Camera.main.ScreenPointToRay (Input.mousePosition).origin;
-				umbrellaPosition = transform.position;
+
 				direction = mouseEndPosition - mouseStartPosition;
 				force = new Vector2 (direction.x, direction.y) * windForce;
 				wind.AddForce (force);

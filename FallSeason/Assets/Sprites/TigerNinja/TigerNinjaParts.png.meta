@@ -1,0 +1,144 @@
+fileFormatVersion: 2
+guid: ffbddb0b3d98d574dbfeaf560f04082c
+timeCreated: 1447967172
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: TigerNinjaParts_LeftArm
+    21300002: TigerNinjaParts_RightArm
+    21300004: TigerNinjaParts_Hood
+    21300006: TigerNinjaParts_Legs
+    21300008: TigerNinjaParts_HoodTail
+    21300010: TigerNinjaParts_Tail
+    21300012: TigerNinjaParts_LeftEar
+    21300014: TigerNinjaParts_RightEar
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: TigerNinjaParts_LeftArm
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 572
+        width: 234
+        height: 182
+      alignment: 9
+      pivot: {x: .913449287, y: .644378662}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TigerNinjaParts_RightArm
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 677
+        width: 224
+        height: 130
+      alignment: 9
+      pivot: {x: .105418481, y: .472436041}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TigerNinjaParts_Hood
+      rect:
+        serializedVersion: 2
+        x: 837
+        y: 249
+        width: 466
+        height: 585
+      alignment: 9
+      pivot: {x: .376970679, y: .422414362}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TigerNinjaParts_Legs
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 297
+        width: 319
+        height: 283
+      alignment: 9
+      pivot: {x: .38018465, y: .803877652}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TigerNinjaParts_HoodTail
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 324
+        width: 97
+        height: 325
+      alignment: 9
+      pivot: {x: .315297544, y: .871185601}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TigerNinjaParts_Tail
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 44
+        width: 156
+        height: 175
+      alignment: 9
+      pivot: {x: .683755159, y: .882210612}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TigerNinjaParts_LeftEar
+      rect:
+        serializedVersion: 2
+        x: 814
+        y: 51
+        width: 75
+        height: 111
+      alignment: 9
+      pivot: {x: .818508327, y: .467718184}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TigerNinjaParts_RightEar
+      rect:
+        serializedVersion: 2
+        x: 1122
+        y: 76
+        width: 88
+        height: 114
+      alignment: 9
+      pivot: {x: .242116749, y: .479045391}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
