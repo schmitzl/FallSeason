@@ -1,0 +1,441 @@
+fileFormatVersion: 2
+guid: acf4889d63aed9b488b3c4389d579fe0
+timeCreated: 1449413108
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: FoldingLevelParts_Cliff_Left
+    21300002: FoldingLevelParts_BigLotusRoot_Left
+    21300004: FoldingLevelParts_BigLotus_Left
+    21300006: FoldingLevelParts_RightWall_big
+    21300008: FoldingLevelParts_RightWallSmall
+    21300010: FoldingLevelParts_BigLotus_Right
+    21300012: FoldingLevelParts_Cliff_Right
+    21300014: FoldingLevelParts_BigLotusRoots_Right
+    21300016: FoldingLevelParts_LeftWall
+    21300018: FoldingLevelParts_Green0
+    21300020: FoldingLevelParts_Green1
+    21300022: FoldingLevelParts_Green2
+    21300024: FoldingLevelParts_Green3
+    21300026: FoldingLevelParts_Green4
+    21300028: FoldingLevelParts_Green5
+    21300030: FoldingLevelParts_Green6
+    21300032: FoldingLevelParts_Green7
+    21300034: FoldingLevelParts_Green8
+    21300036: FoldingLevelParts_Green9
+    21300038: FoldingLevelParts_Green10
+    21300040: FoldingLevelParts_Green11
+    21300042: FoldingLevelParts_Green12
+    21300044: FoldingLevelParts_DragonStatue
+    21300046: FoldingLevelParts_LotusFlower
+    21300048: FoldingLevelParts_LotusLeaves
+    21300050: FoldingLevelParts_LotusRoots
+    21300052: FoldingLevelParts_LotusFlower_Small
+    21300054: FoldingLevelParts_LotusLeaves_Small
+    21300056: FoldingLevelParts_LotusRoots_Small
+    21300058: FoldingLevelParts_Crack0
+    21300060: FoldingLevelParts_Root0
+    21300062: FoldingLevelParts_Root1
+    21300064: FoldingLevelParts_Root2
+    21300066: FoldingLevelParts_crack1
+    21300068: FoldingLevelParts_WallBricks
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: FoldingLevelParts_Cliff_Left
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 1617
+        width: 316
+        height: 361
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FoldingLevelParts_BigLotusRoot_Left
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 1399
+        width: 175
+        height: 424
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FoldingLevelParts_BigLotus_Left
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 1679
+        width: 377
+        height: 319
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FoldingLevelParts_RightWall_big
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 1193
+        width: 475
+        height: 530
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FoldingLevelParts_RightWallSmall
+      rect:
+        serializedVersion: 2
+        x: 562
+        y: 717
+        width: 319
+        height: 555
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FoldingLevelParts_BigLotus_Right
+      rect:
+        serializedVersion: 2
+        x: 1537
+        y: 1655
+        width: 366
+        height: 319
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FoldingLevelParts_Cliff_Right
+      rect:
+        serializedVersion: 2
+        x: 2106
+        y: 1453
+        width: 273
+        height: 467
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FoldingLevelParts_BigLotusRoots_Right
+      rect:
+        serializedVersion: 2
+        x: 1617
+        y: 1152
+        width: 181
+        height: 462
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FoldingLevelParts_LeftWall
+      rect:
+        serializedVersion: 2
+        x: 997
+        y: 455
+        width: 475
+        height: 530
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FoldingLevelParts_Green0
+      rect:
+        serializedVersion: 2
+        x: 1538
+        y: 509
+        width: 181
+        height: 354
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FoldingLevelParts_Green1
+      rect:
+        serializedVersion: 2
+        x: 1613
+        y: 873
+        width: 135
+        height: 159
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FoldingLevelParts_Green2
+      rect:
+        serializedVersion: 2
+        x: 1785
+        y: 653
+        width: 173
+        height: 368
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FoldingLevelParts_Green3
+      rect:
+        serializedVersion: 2
+        x: 1882
+        y: 290
+        width: 74
+        height: 168
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FoldingLevelParts_Green4
+      rect:
+        serializedVersion: 2
+        x: 2051
+        y: 186
+        width: 124
+        height: 267
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FoldingLevelParts_Green5
+      rect:
+        serializedVersion: 2
+        x: 1887
+        y: 1041
+        width: 177
+        height: 316
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FoldingLevelParts_Green6
+      rect:
+        serializedVersion: 2
+        x: 2305
+        y: 1178
+        width: 138
+        height: 259
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FoldingLevelParts_Green7
+      rect:
+        serializedVersion: 2
+        x: 2050
+        y: 916
+        width: 206
+        height: 511
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FoldingLevelParts_Green8
+      rect:
+        serializedVersion: 2
+        x: 2301
+        y: 839
+        width: 76
+        height: 183
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FoldingLevelParts_Green9
+      rect:
+        serializedVersion: 2
+        x: 1990
+        y: 712
+        width: 196
+        height: 173
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FoldingLevelParts_Green10
+      rect:
+        serializedVersion: 2
+        x: 1968
+        y: 495
+        width: 237
+        height: 181
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FoldingLevelParts_Green11
+      rect:
+        serializedVersion: 2
+        x: 2226
+        y: 432
+        width: 168
+        height: 285
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FoldingLevelParts_Green12
+      rect:
+        serializedVersion: 2
+        x: 2268
+        y: 161
+        width: 128
+        height: 217
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FoldingLevelParts_DragonStatue
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 1034
+        width: 294
+        height: 520
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FoldingLevelParts_LotusFlower
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 1081
+        width: 148
+        height: 123
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FoldingLevelParts_LotusLeaves
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 988
+        width: 145
+        height: 89
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FoldingLevelParts_LotusRoots
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 710
+        width: 173
+        height: 247
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FoldingLevelParts_LotusFlower_Small
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 680
+        width: 127
+        height: 107
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FoldingLevelParts_LotusLeaves_Small
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 589
+        width: 125
+        height: 77
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FoldingLevelParts_LotusRoots_Small
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 339
+        width: 153
+        height: 235
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FoldingLevelParts_Crack0
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 248
+        width: 29
+        height: 33
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FoldingLevelParts_Root0
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 308
+        width: 35
+        height: 82
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FoldingLevelParts_Root1
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 260
+        width: 65
+        height: 216
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FoldingLevelParts_Root2
+      rect:
+        serializedVersion: 2
+        x: 860
+        y: 189
+        width: 98
+        height: 105
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FoldingLevelParts_crack1
+      rect:
+        serializedVersion: 2
+        x: 871
+        y: 399
+        width: 30
+        height: 58
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FoldingLevelParts_WallBricks
+      rect:
+        serializedVersion: 2
+        x: 759
+        y: 789
+        width: 60
+        height: 54
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
