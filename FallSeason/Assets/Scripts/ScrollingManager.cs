@@ -3,6 +3,8 @@ using System.Collections;
 
 public class ScrollingManager : MonoBehaviour {
 	
+	public DifficultyManager DiffManager;
+
 	public GameObject[] background;
 	private int highestBG = 0;
 	private int counterBG = 0;
@@ -23,16 +25,18 @@ public class ScrollingManager : MonoBehaviour {
 		get { return distanceCounter; }
 		set { distanceCounter = value; }
 	}
-
-	// Use this for initialization
+	
 	void Start () {
 		mass = GetComponent<Rigidbody2D>().mass;
 		levelSpeed = 0.05f;
 		speedBG = levelSpeed;
 		distanceCounter = 0;
+
+		//initalize difficulty manager
+		DiffManager = GetComponentInChildren<DifficultyManager>();
+
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
 		// Update the speed before collision
 		speedBeforeCollision = - GetComponent<Rigidbody2D>().velocity.y / 30;
@@ -76,6 +80,10 @@ public class ScrollingManager : MonoBehaviour {
 			float jumpLength = 17*(background.Length);
 			Vector3 down = new Vector3(0,  -jumpLength, 0);
 			background[highestBG].transform.position += down;
+
+			//increase difficulty of the scrolled level
+			DiffManager.spawn(background[highestBG]);
+
 			highestBG = (highestBG + 1) % background.Length;
 			counterBG++;
 		}
