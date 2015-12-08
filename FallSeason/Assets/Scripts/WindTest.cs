@@ -86,23 +86,31 @@ public class WindTest : MonoBehaviour {
 	}
 
 	void spawnWindParticles () {
-		float norm = Vector2.Distance(mouseStartPosition, mouseEndPosition);
-//		Debug.Log(norm);
-		GameObject windInstance;
+		// We calculate the rotation of the wind effect around z
 		Vector3 dir = mouseEndPosition - mouseStartPosition;
 		float alpha = Mathf.Atan(dir.y / dir.x) * Mathf.Rad2Deg;
 		if (mouseStartPosition.x > mouseEndPosition.x) {
 			alpha += 180;
 		}
-		Debug.Log (alpha);
-		if (norm > 4.5f) {
-			windInstance = Instantiate(big, mouseStartPosition, Quaternion.identity) as GameObject;
-		} else if (norm <= 4.5f && norm > 2.0f) {
-			windInstance = Instantiate(medium, mouseStartPosition, Quaternion.identity) as GameObject;
-		} else {
-			windInstance = Instantiate(small, mouseStartPosition, Quaternion.identity) as GameObject;
+
+		GameObject windInstance;
+		float norm = Vector2.Distance(mouseStartPosition, mouseEndPosition);
+		if (norm > 0.5f) {
+
+			// Depending of the strength of the wind, we instantiate a big, medium or small one
+			if (norm > 5.0f) {
+				windInstance = Instantiate(big, mouseStartPosition, Quaternion.identity) as GameObject;
+			} else if (norm <= 5.0f && norm > 2.5f) {
+				windInstance = Instantiate(medium, mouseStartPosition, Quaternion.identity) as GameObject;
+			} else {
+				windInstance = Instantiate(small, mouseStartPosition, Quaternion.identity) as GameObject;
+			}
+
+			// We rotate it depending on the direction
+			windInstance.transform.Rotate(0, 0, alpha);
+
+			// After the effect has finished playing, we destroy it
+			Destroy(windInstance, 5);
 		}
-		windInstance.transform.Rotate(0, 0, alpha);
-		Destroy(windInstance, 5);
 	}
 }
