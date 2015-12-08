@@ -9,13 +9,13 @@ public class DragonEnemy : MonoBehaviour {
 	IEnumerator Start()
 	{
 		Vector3 pointA = transform.localPosition;
-		Vector3 pointB = transform.localPosition + new Vector3(-20, 0,0);
+		Vector3 pointB = transform.localPosition + new Vector3(-10, 0,0);
 		spriteFacingLeft = true;
 		while(true)
 		{
-			yield return StartCoroutine(MoveObject(transform, pointA, pointB, 10.0f));
+			yield return StartCoroutine(MoveObject(transform, pointA, pointB, 7.0f));
 			turn (spriteFacingLeft, true);
-			yield return StartCoroutine(MoveObject(transform, pointB, pointA, 10.0f));
+			yield return StartCoroutine(MoveObject(transform, pointB, pointA, 7.0f));
 			turn (spriteFacingLeft, false);
 		}
 	}
