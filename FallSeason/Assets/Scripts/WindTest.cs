@@ -20,18 +20,6 @@ public class WindTest : MonoBehaviour {
 		animator = GetComponent<Animator>();
 	}
 
-	/*void OnMouseDown () {
-		float mousePosition1 = 
-		float airDensity = 1.2f;
-		float surface = 4.0f * Mathf.PI * radius * radius/2.0f;
-		float dragCoef = 0.45f;
-		float liftCoef = 0.3f;
-		float speed = 1.0f;
-		wind.AddForce (new Vector3 (0.5f * airDensity * surface * dragCoef * speed * speed, 
-		                        0.5f * airDensity * surface * liftCoef * speed * speed, 
-		                        1.0f));
-	}*/
-
 	void Update(){
 		Vector2 direction;	
 		float airDensity = 1.2f;
@@ -46,6 +34,7 @@ public class WindTest : MonoBehaviour {
 		if (Input.GetMouseButtonUp (0)) {
 			if (mousePressed) {
 				mouseEndPosition = Camera.main.ScreenPointToRay (Input.mousePosition).origin;
+
 				direction = mouseEndPosition - mouseStartPosition;
 				force = new Vector2 (direction.x, direction.y) * windForce;
 				wind.AddForce (force);

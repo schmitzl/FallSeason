@@ -6,7 +6,7 @@ public class ScrollingManager : MonoBehaviour {
 	public DifficultyManager DiffManager;
 
 	public GameObject[] background;
-	private int highestBG = 0;
+	public int highestBG = 0;
 	private int counterBG = 0;
 	
 	private float speedBG;
@@ -15,6 +15,11 @@ public class ScrollingManager : MonoBehaviour {
 	private float mass;
 	private float levelSpeed;
 	private float speedBeforeCollision;
+
+	private float speedUnfolded;
+	private float speedFolded;
+	private bool foldStateRegistered = false;
+	private float gravityMult;
 
 	public float speed {
 		get { return speedBG; }
@@ -28,6 +33,10 @@ public class ScrollingManager : MonoBehaviour {
 	
 	void Start () {
 		mass = GetComponent<Rigidbody2D>().mass;
+		gravityMult = GetComponent<UmbrellaFolding>().gravityMult;
+		speedUnfolded = 0.05f;
+		speedFolded = speedUnfolded * gravityMult / 4;
+		levelSpeed = speedUnfolded;
 		levelSpeed = 0.05f;
 		speedBG = levelSpeed;
 		distanceCounter = 0;
@@ -63,7 +72,22 @@ public class ScrollingManager : MonoBehaviour {
 		if (speedBeforeCollision > 0.01f) {
 			speedBG = speedBeforeCollision;
 		}
-		
+
+		float gravityScale = this.transform.GetComponent<Rigidbody2D> ().gravityScale;
+		bool nowFolded = GetComponent<UmbrellaFolding> ().folded;
+		// If the umbrella has changed state, then change level speed
+		if (nowFolded != foldStateRegistered) {
+			// if the umbrella is now folded
+			if (nowFolded) {
+				levelSpeed = speedFolded;
+				speedBG += (gravityMult - 1.0f) * gravityScale * (-Physics.gravity.y) * Time.deltaTime / 30;
+			} else {
+				levelSpeed = speedUnfolded;
+				speedBG -= (gravityMult - 1.0f) * gravityScale * (-Physics.gravity.y) * Time.deltaTime / 30;
+			}
+			foldStateRegistered = !foldStateRegistered;
+		}
+
 		// We add the force input to the speed
 		if (Input.GetMouseButtonUp(0)) {
 			float forceY = GetComponent<WindTest>().force.y;
@@ -80,6 +104,9 @@ public class ScrollingManager : MonoBehaviour {
 			float jumpLength = 17*(background.Length);
 			Vector3 down = new Vector3(0,  -jumpLength, 0);
 			background[highestBG].transform.position += down;
+
+			// Reset all taken collectables
+			respawnCollectables(background[highestBG]);
 
 			//increase difficulty of the scrolled level
 			DiffManager.spawn(background[highestBG]);
@@ -99,5 +126,14 @@ public class ScrollingManager : MonoBehaviour {
 			speedBG -= 0.002f;
 		}
 
+	}
+
+	private void respawnCollectables(GameObject level){
+		Transform collectablesTransform = level.transform.FindChild ("Collectables");
+		if (collectablesTransform != null) {
+			foreach(Transform child in collectablesTransform){
+				child.gameObject.SetActive(true);
+			}
+		}
 	}
 }
