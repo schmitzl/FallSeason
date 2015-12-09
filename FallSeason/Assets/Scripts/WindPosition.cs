@@ -4,10 +4,10 @@ using System.Collections;
 public class WindPosition : MonoBehaviour {
 
 	private Vector3 windDir;
-	private GameObject mainCharacter;
+//	private GameObject mainCharacter;
 
 	void Start () {
-		mainCharacter = GameObject.FindGameObjectWithTag("Player");
+//		mainCharacter = GameObject.FindGameObjectWithTag("Player");
 	}
 
 	void Update () {
