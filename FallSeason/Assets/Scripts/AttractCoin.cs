@@ -9,7 +9,7 @@ public class AttractCoin : MonoBehaviour {
 		Vector3 diff = GameObject.FindGameObjectsWithTag ("Player")[0].transform.position - this.transform.position;
 		diff += 0.1f * diff;
 		if (attracted) {
-			this.transform.position += 0.1f * diff;
+			this.transform.position += 0.02f * diff;
 		}
 	}
 }
