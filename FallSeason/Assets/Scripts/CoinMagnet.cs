@@ -4,6 +4,7 @@ using System.Collections;
 public class CoinMagnet : MonoBehaviour {
 
 	public float timeActive;
+	public float maxDistance;
 
 	private float startMagnet;
 	private bool magnetActivated = false;
@@ -12,24 +13,37 @@ public class CoinMagnet : MonoBehaviour {
 		float y = this.transform.position.y;
 		if (magnetActivated) {
 			if (Time.time - startMagnet < timeActive) {
-				foreach (GameObject bronzeCoin in GameObject.FindGameObjectsWithTag("BronzeCoin")) {
-					if (Mathf.Abs(bronzeCoin.transform.position.y - y) < 0.05f) {
-						bronzeCoin.SetActive (false);
-						this.GetComponent<PickCoins> ().coinCounter += 1;
+				GameObject[] background = this.GetComponent<ScrollingManager> ().background;
+				int highest = this.GetComponent<ScrollingManager> ().highestBG;
+				Transform collectablesTransform = background[highest].transform.FindChild ("Collectables");
+				Transform collectablesTransformNext = background[(highest+1) % background.Length].transform.FindChild ("Collectables");
+				//Debug.Log ("HIGHBG = " + background [highest].name);
+				if (collectablesTransform != null) {
+					foreach(Transform child in collectablesTransform){
+						float distance = Vector3.Distance(this.transform.position, child.position);
+						Debug.Log("tranform pos = " + this.transform.position + ", child pos = " + child.position);
+						Debug.Log ("name = " + child.gameObject.name + ", diff = " + distance + ", active = " + this.gameObject.activeSelf);
+						if ((distance < maxDistance) && (child.gameObject.activeSelf)) {
+							Debug.Log ("close");
+							if (child.CompareTag("GoldCoin") || child.CompareTag("SilverCoin") || child.CompareTag("BronzeCoin")) {
+								child.GetComponent<AttractCoin>().attracted = true;
+							}
+						}
 					}
 				}
-				foreach (GameObject silverCoin in GameObject.FindGameObjectsWithTag("SilverCoin")) {
-					if (Mathf.Abs(silverCoin.transform.position.y - y) < 0.05f) {
-						silverCoin.SetActive (false);
-						this.GetComponent<PickCoins> ().coinCounter += 2;
+				if (collectablesTransformNext != null) {
+					foreach(Transform child in collectablesTransformNext){
+						float distance = Vector3.Distance(this.transform.position, child.position);
+						Debug.Log("tranform pos = " + this.transform.position + ", child pos = " + child.position);
+						Debug.Log ("name = " + child.gameObject.name + ", diff = " + distance + ", active = " + this.gameObject.activeSelf);
+						if ((distance < maxDistance) && (child.gameObject.activeSelf)) {
+							Debug.Log ("close");
+							if (child.CompareTag("GoldCoin") || child.CompareTag("SilverCoin") || child.CompareTag("BronzeCoin")) {
+								child.GetComponent<AttractCoin>().attracted = true;
+							}
+						}
 					}
 				}
-				foreach (GameObject goldCoin in GameObject.FindGameObjectsWithTag("GoldCoin")) {
-					if (Mathf.Abs(goldCoin.transform.position.y - y) < 0.05f) {
-						goldCoin.SetActive (false);
-						this.GetComponent<PickCoins> ().coinCounter += 5;
-					}
-				}	
 			} else {
 				magnetActivated = false;
 			}
@@ -44,4 +58,5 @@ public class CoinMagnet : MonoBehaviour {
 			magnetActivated = true;
 		}
 	}
+
 }
