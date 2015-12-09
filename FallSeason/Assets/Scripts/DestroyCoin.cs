@@ -5,7 +5,8 @@ public class DestroyCoin : MonoBehaviour {
 
 	void Update () {
 		if (transform.position.y > 4.5f) {
-			DestroyObject (gameObject);
+			//DestroyObject (gameObject);
+			gameObject.SetActive(false);
 		}
 	}
 }
