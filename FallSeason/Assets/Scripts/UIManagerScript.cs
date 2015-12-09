@@ -6,7 +6,7 @@ public class UIManagerScript : MonoBehaviour {
 
 	public void StartGame(){
 
-		Application.LoadLevel ("Level1");
+		Application.LoadLevel (3);
 	} 
 
 	public void StartHighScore(){
