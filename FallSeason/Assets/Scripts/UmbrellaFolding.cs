@@ -5,6 +5,8 @@ public class UmbrellaFolding : MonoBehaviour {
 
 	public float gravityMult;
 
+	private pauseScript pauseController;
+
 	private bool umbrellaFolded = false;
 	private float doubleClickStart = 0.0f;
 	private Rigidbody2D rigidBody;
@@ -14,6 +16,7 @@ public class UmbrellaFolding : MonoBehaviour {
 	void Start() {
 		animator = GetComponent<Animator>();
 		rigidBody = GetComponent<Rigidbody2D> ();
+		pauseController = GameObject.Find ("PauseController").GetComponent<pauseScript> ();
 	}
 	
 	void DetectDoubleClick()
@@ -44,7 +47,8 @@ public class UmbrellaFolding : MonoBehaviour {
 	}
 
 	void Update() {
-		DetectDoubleClick ();
+		if(!pauseController.isPaused)
+			DetectDoubleClick ();
 	}
 
 	public bool folded {

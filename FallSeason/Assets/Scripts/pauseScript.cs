@@ -16,30 +16,14 @@ public class pauseScript : MonoBehaviour {
 	void Start () {
 
 		isPaused = false;
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		if (isPaused) {
-			PauseGame (true);
-		} else {
-			PauseGame (false);
-		}
-
-
-		if (Input.GetButtonDown ("Cancel")) {
-			SwitchPauase ();
-		}
-
-
+		PauseGame (false);
 	
 	}
 
 
 	void PauseGame (bool state){
 		if (state) {
-			Time.timeScale = 0.0f; //paused game
+			Time.timeScale = 0.0f; //paused games
 		} else {
 			Time.timeScale = 1.0f; //unpaused game
 		}
@@ -50,11 +34,13 @@ public class pauseScript : MonoBehaviour {
 	}
 
 
-	public void SwitchPauase(){
+	public void SwitchPause(){
 		if (isPaused) {
 			isPaused = false; //changes value
+			PauseGame (false);
 		} else {
 			isPaused = true;
+			PauseGame (true);
 		}
 
 	}
@@ -64,7 +50,7 @@ public class pauseScript : MonoBehaviour {
 
 	
 	public void RestartGame(){
-		Application.LoadLevel ("Level1");
+		Application.LoadLevel (3);
 	}
 
 	
