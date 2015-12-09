@@ -7,19 +7,24 @@ public class ScoreManager : MonoBehaviour {
 	public Text scoreText;
 	public Text distanceText;
 	public Text coinText;
+	public Text livesText;
+	public Text pauseDistanceText;
 
 	private int prevDistance;
 	private int prevCoins;
+	private int prevLives;
 
 	private int distance;
 	private float speed;
 	private int speedCombo;
 	private int coins;
 	private int score;
+	private int lives;
 
 	// Use this for initialization
 	void Start () {
 		score = distance = coins = 0;
+		lives = 3;
 		UpdateTexts();
 	}
 	
@@ -50,13 +55,18 @@ public class ScoreManager : MonoBehaviour {
 		prevCoins = coins;
 		coins = GetComponent<PickCoins>().coins;
 
+		// Udpate lives
+		prevLives = lives;
+		lives = GetComponent<CharacterLife>().life;
+
 		// Update the score
 		score += (distance - prevDistance) * speedCombo * 10 + (coins - prevCoins);
 	}
 
 	void UpdateTexts () {
-		scoreText.text 		= "Score : " 	+ score.ToString ();
-		distanceText.text 	= "Distance : " + distance.ToString ();
-		coinText.text 		= "Coins : " 	+ coins.ToString ();
+		scoreText.text 		= "Total Score : " 	+ score.ToString ();
+		distanceText.text 	= "You traveled for " + distance.ToString ();
+		coinText.text 		= " x" 	+ coins.ToString ();
+		pauseDistanceText.text = "Your current score is " + score.ToString ();
 	}
 }
