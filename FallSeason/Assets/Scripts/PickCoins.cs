@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class PickCoins : MonoBehaviour {
 
-	private int coinCounter;
+	public int coinCounter;
 
 	public int coins {
 		get { return coinCounter; }
