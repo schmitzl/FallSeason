@@ -24,11 +24,20 @@ public class pauseScript : MonoBehaviour {
 	void PauseGame (bool state){
 		if (state) {
 			Time.timeScale = 0.0f; //paused games
+		
 		} else {
 			Time.timeScale = 1.0f; //unpaused game
+
 		}
+		
+		//GetComponent<CharacterLife>().coinPanel.SetActive (false);
+	//	GetComponent<CharacterLife>().lostPanel.SetActive (false);
 
 		pausePanel.SetActive (state);
+	
+
+	
+
 
 
 	}
@@ -38,7 +47,9 @@ public class pauseScript : MonoBehaviour {
 		if (isPaused) {
 			isPaused = false; //changes value
 			PauseGame (false);
+
 		} else {
+
 			isPaused = true;
 			PauseGame (true);
 		}
@@ -50,7 +61,7 @@ public class pauseScript : MonoBehaviour {
 
 	
 	public void RestartGame(){
-		Application.LoadLevel (3);
+		Application.LoadLevel ("MikaelTestScene");
 	}
 
 	
