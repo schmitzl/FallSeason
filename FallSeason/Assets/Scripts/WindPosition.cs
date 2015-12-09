@@ -11,9 +11,7 @@ public class WindPosition : MonoBehaviour {
 	}
 
 	void Update () {
-		this.transform.position = mainCharacter.transform.position - windDir;
-		Debug.Log("Char" + mainCharacter.transform.position);
-		Debug.Log("Wind" + this.transform.position);
+//		this.transform.position = mainCharacter.transform.position - windDir;
 	}
 
 	public Vector3 scaledDir {

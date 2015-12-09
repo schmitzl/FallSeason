@@ -93,7 +93,6 @@ public class WindTest : MonoBehaviour {
 				windInstance = Instantiate(small, pos, Quaternion.identity) as GameObject;
 			}
 			windInstance.GetComponent<WindPosition>().scaledDir = dir;
-			Debug.Log(windInstance.GetComponent<WindPosition>().scaledDir);
 			windInstance.transform.Rotate(0, 0, alpha);
 
 			// After the effect has finished playing, we destroy it
