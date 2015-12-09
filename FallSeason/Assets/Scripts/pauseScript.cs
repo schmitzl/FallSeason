@@ -50,7 +50,7 @@ public class pauseScript : MonoBehaviour {
 
 	
 	public void RestartGame(){
-		Application.LoadLevel (3);
+		Application.LoadLevel ("NewMainScene");
 	}
 
 	

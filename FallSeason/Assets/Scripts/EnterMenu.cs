@@ -5,7 +5,7 @@ public class EnterMenu : MonoBehaviour {
 
 	void Update() {
 		if (Input.GetMouseButtonDown (0)) {
-			Application.LoadLevel(1);
+			Application.LoadLevel("MenuScene");
 		}
 	}
 }
