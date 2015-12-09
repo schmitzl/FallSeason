@@ -45,6 +45,7 @@ public class WindTest : MonoBehaviour {
 				spawnWindParticles();
 			}
 		}
+
 	}
 
 	void FixedUpdate(){
@@ -77,24 +78,22 @@ public class WindTest : MonoBehaviour {
 			alpha += 180;
 		}
 
-		GameObject windInstance;
 		float norm = Vector2.Distance(mouseStartPosition, mouseEndPosition);
 		if (norm > 0.5f) {
 
 			// Depending of the strength of the wind, we instantiate a big, medium or small one
-			Vector3 pos;
+			GameObject windInstance;
+			Vector3 windDir = scaleDir(dir);
+			Vector3 pos = this.transform.position - windDir;
 			if (norm > 5.0f) {
-				pos = this.transform.position - scaleDir(dir);
 				windInstance = Instantiate(big, pos, Quaternion.identity) as GameObject;
 			} else if (norm <= 5.0f && norm > 2.5f) {
-				pos = this.transform.position - scaleDir(dir);
 				windInstance = Instantiate(medium, pos, Quaternion.identity) as GameObject;
 			} else {
-				pos = this.transform.position - scaleDir(dir);
 				windInstance = Instantiate(small, pos, Quaternion.identity) as GameObject;
 			}
-
-			// We rotate it depending on the direction
+			windInstance.GetComponent<WindPosition>().scaledDir = dir;
+			Debug.Log(windInstance.GetComponent<WindPosition>().scaledDir);
 			windInstance.transform.Rotate(0, 0, alpha);
 
 			// After the effect has finished playing, we destroy it
