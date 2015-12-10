@@ -12,19 +12,20 @@ public class ScoreManager : MonoBehaviour {
 
 	private int prevDistance;
 	private int prevCoins;
-	private int prevLives;
 
 	private int distance;
 	private float speed;
 	private int speedCombo;
 	private int coins;
 	private int score;
-	private int lives;
+
+	public int Score {
+		get {return score;}
+	}
 
 	// Use this for initialization
 	void Start () {
 		score = distance = coins = 0;
-		lives = 3;
 		UpdateTexts();
 	}
 	
@@ -55,9 +56,6 @@ public class ScoreManager : MonoBehaviour {
 		prevCoins = coins;
 		coins = GetComponent<PickCoins>().coins;
 
-		// Udpate lives
-		prevLives = lives;
-		lives = GetComponent<CharacterLife>().life;
 
 		// Update the score
 		score += (distance - prevDistance) * speedCombo * 10 + (coins - prevCoins);

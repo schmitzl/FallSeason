@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 
@@ -66,6 +66,15 @@ public class CharacterLife : MonoBehaviour {
 
 		Time.timeScale = 0.0f; //pauses game
 		lostPanel.SetActive(true);
+
+		// Set final score in losing panel
+		ScoreManager scoreManager = GetComponent<ScoreManager>();
+		foreach(Text text in lostPanel.GetComponentsInChildren<Text>()){
+			if(text.name == "Text_Score"){
+				text.text = "Total score: " + scoreManager.Score;
+			}
+		}
+
 		coinPanel.SetActive (false);
 		pauseButtonPanel.SetActive (false);
 
