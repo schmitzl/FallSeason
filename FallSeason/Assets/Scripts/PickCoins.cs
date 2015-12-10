@@ -22,20 +22,20 @@ public class PickCoins : MonoBehaviour {
 	void Start() {
 		coinCounter = 0;
 	}
-
+	
 	void OnTriggerEnter2D (Collider2D other) {
 		if (other.gameObject.CompareTag("GoldCoin")) {
-			//Destroy(other.gameObject);
+			other.gameObject.GetComponent<AttractCoin>().attracted = false;
 			source.PlayOneShot(hitCoin,5F);
 			other.gameObject.SetActive(false);
 			coinCounter += 5;
 		} else if (other.gameObject.CompareTag("SilverCoin")) {
-			//Destroy(other.gameObject);
+			other.gameObject.GetComponent<AttractCoin>().attracted = false;
 			source.PlayOneShot(hitCoin,5F);
 			other.gameObject.SetActive(false);
 			coinCounter += 2;
 		} else if (other.gameObject.CompareTag("BronzeCoin")) {
-			//Destroy(other.gameObject);
+			other.gameObject.GetComponent<AttractCoin>().attracted = false;
 			source.PlayOneShot(hitCoin,5F);
 			other.gameObject.SetActive(false);
 			coinCounter += 1;
