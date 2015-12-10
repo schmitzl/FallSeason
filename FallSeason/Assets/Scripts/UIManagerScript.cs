@@ -3,21 +3,43 @@ using System.Collections;
 
 public class UIManagerScript : MonoBehaviour {
 
+
 	public void StartGame(){
-		Application.LoadLevel ("MainScene");
-	}
+
+		Application.LoadLevel ("NewMainScene");
+	} 
 
 	public void StartHighScore(){
+
 		Application.LoadLevel ("highscore_list");
 
 	}
 
 	public void ExitToMenu() {
+
 		Application.LoadLevel ("MenuScene");
+
+	}
+
+	public void CreditMenu() {
+		
+		Application.LoadLevel ("CreditScene");
+		
 	}
 
 
-	public Animator startButton;
+	public Animator settingsButton;
+
+	public void OpenSettings() {
+		settingsButton.SetBool ("isHidden", true);
+	}
+
+	public void CloseSettings() {
+		settingsButton.SetBool ("isHidden", false);
+	}
+
+
+	/*public Animator startButton;
 	public Animator settingsButton;
 	public Animator highscoreButton;
 	public Animator dialog;
@@ -36,7 +58,7 @@ public class UIManagerScript : MonoBehaviour {
 		settingsButton.SetBool("isHidden", false);
 		highscoreButton.SetBool("isHidden", false);
 		dialog.SetBool("isHidden", true);
-	}
+	} */
 
 
 }
